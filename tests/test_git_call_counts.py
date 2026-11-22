@@ -195,7 +195,6 @@ SUBMIT_CREATE_EXPECTED: dict[str, int] = {
     "commit-tree": 1,
     "config": 1,
     "diff-tree": 1,
-    "gc": 2,
     "log": 2,
     "rev-list": 2,
     "remote": 1,
@@ -248,7 +247,6 @@ def test_submit_create_git_call_count(
 PATCH_RAW_EXPECTED: dict[str, int] = {
     "--version": 1,
     "config": 1,
-    "gc": 1,
 }
 
 

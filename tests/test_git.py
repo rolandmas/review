@@ -895,7 +895,8 @@ def test_cleanup_skips_checkout_when_head_on_branch(
     m_is_head_on_branch.return_value = True
     git.cleanup()
     m_checkout.assert_not_called()
-    m_git_call.assert_called_once_with(["gc", "--auto", "--quiet"])
+    # Git garbage-collects on its own; we must not run `git gc` ourselves.
+    m_git_call.assert_not_called()
 
     # Something moved HEAD (e.g. uplift's `git switch -c`): restore it.
     m_is_head_on_branch.return_value = False

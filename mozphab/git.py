@@ -267,7 +267,6 @@ class Git(Repository):
         )
 
     def cleanup(self):
-        self.git_call(["gc", "--auto", "--quiet"])
         if self.branch and not self._is_head_on_branch(self.branch):
             self.checkout(self.branch)
 
